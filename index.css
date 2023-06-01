@@ -1,6 +1,232 @@
 * {
     margin: 0;
+    /* Set margin */
     padding: 0;
-    box-sizing: border-box;    
-    /* test only */
+    /* Set inner margin */
+    box-sizing: border-box;
+}
+
+body,
+input {
+    font-family: "Poppins", sans-serif;
+    /* Font Style */
+}
+
+.container5 {
+    position: relative;
+    width: 100%;
+    background: url('https://jmy-pic.baidu.com/0/pic/-685187863_-1501757645_895760272.jpg');
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.forms-container5 {
+    position: absolute;
+    width: 100%;
+    /* Box width and height */
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.one {
+    padding-bottom: .8rem;
+    /* Set inner margin */
+}
+
+.box3 {
+    /* Box width and height */
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.box3 p {
+    padding: 5px 0;
+    /* Set inner margin */
+    font-size: 14px;
+    /* font size */
+}
+
+.box3 h3 {
+    padding: 20px 0;
+    /* Set inner margin */
+}
+
+.box2 img {
+    width: 100%;
+    /* Box width and height */
+    height: 15rem;
+}
+
+.box2 p {
+    padding: .2rem 0;
+    /* Set inner margin */
+    font-size: 14px;
+    /* font size */
+}
+
+.box-title {
+    padding: .8rem 0;
+    /* Set inner margin */
+}
+
+.signin-signup {
+    background-color: rgba(0, 0, 0, .5);
+    /* background color */
+    border-radius: 10px;
+    /* Set the box corners */
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    padding: 2rem;
+    /* Set inner margin */
+    width: 500px;
+    /* Box width and height */
+    transition: 1s 0.7s ease-in-out;
+    color: #fff;
+}
+
+form {
+    height: 100%;
+    width: 100%;
+    /* Box width and height */
+    display: flex;
+    /* Set flex layout */
+    flex-direction: column;
+    transition: all 0.2s 0.7s;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+form.sign-up-form {
+    opacity: 0;
+    z-index: 1;
+}
+
+form.sign-in-form {
+    z-index: 2;
+}
+
+.title {
+    font-size: 1.1rem;
+    /* font size */
+    padding-bottom: 6px;
+    /* Set inner margin */
+}
+
+.input-field {
+    padding-bottom: 1.2rem;
+    /* Set inner margin */
+    border-radius: 5px;
+    /* Set the box corners */
+}
+
+.select-field {
+    outline: none;
+    border-radius: 5px;
+    /* Set the box corners */
+    width: 20rem;
+    /* Box width and height */
+    height: 2.2rem;
+    border: 1px solid rgb(187, 178, 178);
+    font-size: 1rem;
+    /* font size */
+    color: black;
+    padding: 3px;
+    /* Set inner margin */
+}
+
+.input-field input {
+    outline: none;
+    padding: .6rem;
+    /* Set inner margin */
+    border: 1px solid rgb(187, 178, 178);
+    border-radius: 5px;
+    /* Set the box corners */
+    font-weight: 600;
+    /* Font thicknes */
+    font-size: 1.1rem;
+    /* font size */
+    color: #333;
+    height: 2rem;
+    width: 20rem;
+}
+
+.sendbtn {
+    cursor: pointer;
+    height: 2.8rem;
+    width: 20rem;
+    /* Box width and height */
+    border: none;
+    border-radius: .3rem;
+    /* Set the box corners */
+    padding-bottom: 1rem;
+    /* Set inner margin */
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    /* font size */
+    text-align: center;
+    line-height: 2.8rem;
+    background-color: #43CDFE;
+    /* background color */
+}
+
+.two {
+    padding: 10px 0;
+    /* Set inner margin */
+}
+
+@media (max-width: 420px) {
+    .container5 {
+        min-height: 800px;
+        height: 100vh;
+    }
+    .signin-signup {
+        width: 90%;
+        /* Box width and height */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .input-field input {
+        max-width: 270px;
+        /* Box width and height */
+        font-weight: 600;
+        /* Font thicknes */
+        font-size: 1.1rem;
+        /* font size */
+        color: #333;
+        height: 2rem;
+    }
+    .title {
+        font-size: .3rem;
+        /* font size */
+        padding-bottom: 6px;
+        /* Set inner margin */
+    }
+    .one {
+        padding: 0 0 .6rem .1rem;
+        font-size: 1.3rem;
+        /* Set inner margin */
+    }
+    .two {
+        max-width: 280px;
+        /* Box width and height */
+        padding: .4rem 0 .4rem .1rem;
+        font-size: .8rem;
+        /* Set inner margin */
+    }
+    .sendbtn {
+        max-width: 270px;
+        /* Box width and height */
+    }
+    .select-field {
+        font-size: .7rem;
+        /* font size */
+        max-width: 270px;
+        /* Box width and height */
+    }
 }

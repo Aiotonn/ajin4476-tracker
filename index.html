@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Import the bootstrap css file -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    /* css style on the pc */
+    
+    * {
+        padding: 0;
+        /* Set inner margin */
+        margin: 0;
+        /* Set margin */
+    }
+    /* Set background color */
+    
+    body,
+    html {
+        background-color: #eee7e7;
+        /* background color */
+    }
+    
+    .container {
+        margin: 100px auto;
+        /* Set margin */
+        box-sizing: border-box;
+        /* Set up the standard box model */
+    }
+    
+    .title {
+        text-align: center;
+        /* Text centering  */
+        font-size: 45px;
+        /* font size */
+        font-weight: 500;
+    }
+    
+    .title p {
+        font-size: 26px;
+        /* font size */
+        font-weight: 400;
+        text-align: left;
+        /* Text left alignment */
+    }
+    
+    p {
+        margin: 0;
+        /* Set margin */
+    }
+    
+    .content {
+        display: flex;
+        /* Set flex layout */
+    }
+    
+    img {
+        margin: 130px 0;
+        /* Set margin */
+        height: 400px;
+        /* Box width and height */
+        width: 260px;
+    }
+    
+    .choose {
+        margin: 60px;
+        /* Set margin */
+        width: 800px;
+        /* Box width and height */
+        height: 500px;
+        background-color: #fff;
+        border-radius: 20px;
+        /* Set the box corners */
+    }
+    
+    input {
+        outline: none;
+        /* input box */
+        border-top: none;
+        /* frame */
+        border-left: none;
+        border-right: none;
+        padding: 0 5px;
+        width: 200px;
+        /* Box width and height */
+    }
+    
+    .choose {
+        font-size: 30px;
+        /* font size */
+    }
+    
+    .choose p {
+        padding: 15px 50px;
+        /* Box width and height */
+    }
+    
+    select {
+        border: 1px solid #e3e1e1;
+        outline: none;
+        width: 180px;
+    }
+    
+    .next {
+        font-weight: 600;
+        color: #d1c3c3;
+        /* font color */
+        font-size: 40px;
+        /* font size */
+        cursor: pointer;
+        text-align: right;
+    }
+    
+    .next a {
+        color: #d1c3c3;
+        /* font color */
+        text-decoration: none;
+    }
+    /* media query Adapt to mobile terminal */
+    
+    @media (max-width: 420px) {
+        p {
+            margin: 0;
+            /* Set margin */
+        }
+        .container {
+            margin: 20px auto;
+            /* Set margin */
+            box-sizing: border-box;
+        }
+        .title {
+            text-align: center;
+            font-size: 25px;
+            font-weight: 500;
+        }
+        .title p {
+            font-size: 19px;
+            font-weight: 400;
+            text-align: left;
+        }
+        p {
+            margin: 0;
+        }
+        .content {
+            display: flex;
+            flex-direction: column-reverse;
+            /* Let center align, reverse */
+            align-items: center;
+        }
+        img {
+            margin: 0;
+            /* Set margin */
+            height: 190px;
+            width: 190px;
+            /* Box width and height */
+        }
+        .choose {
+            width: 350px;
+            height: 270px;
+            /* Box width and height */
+            background-color: #fff;
+            border-radius: 20px;
+        }
+        input {
+            outline: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            padding: 0 5px;
+            /* Set inner margin */
+            width: 120px;
+        }
+        .choose {
+            font-size: 20px;
+        }
+        .choose p {
+            padding: 5px 10px;
+            /* Set inner margin */
+        }
+        select {
+            border: 1px solid #e3e1e1;
+            outline: none;
+            width: 150px;
+        }
+        .next {
+            font-weight: 600;
+            color: #d1c3c3;
+            font-size: 30px;
+            cursor: pointer;
+            text-align: right;
+        }
+        .next span {
+            padding-right: 10px;
+            /* Set inner margin */
+        }
+    }
+</style>
+
+
+<style>
+    /* css style on the pc */
+    
+    * {
+        padding: 0;
+        /* Set inner margin */
+        margin: 0;
+        /* Set margin */
+    }
+    
+    body,
+    html {
+        background-color: #eee7e7;
+        /* background color */
+    }
+    
+    .container {
+        margin: 100px auto;
+        /* Set margin */
+        box-sizing: border-box;
+        position: relative;
+        padding: 0;
+        /* Set inner margin */
+    }
+    
+    p {
+        margin: 0;
+        /* Set margin */
+    }
+    
+    .title {
+        text-align: center;
+        font-size: 45px;
+        font-weight: 500;
+    }
+    
+    .box {
+        display: flex;
+        /* Set flex layout */
+        justify-content: center;
+        margin: 40px 0;
+    }
+    
+    .box div {
+        font-size: 25px;
+        /* font size */
+        width: 800px;
+        /* Box width and height */
+        height: 100%;
+        border-radius: 50px;
+        text-align: center;
+        padding: 14px;
+        /* Set inner margin */
+        background-color: #fff;
+    }
+    
+    .content {
+        display: flex;
+        /* Set flex layout */
+    }
+    
+    .content-box {
+        display: flex;
+        /* Set flex layout */
+        flex-wrap: wrap;
+        flex: 1;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    
+    .content-box div {
+        cursor: pointer;
+        border-radius: 30px;
+        width: 35%;
+        /* Box width and height */
+        height: 100px;
+        background-color: #fff;
+        /* background color */
+        text-align: center;
+        line-height: 100px;
+        margin: 40px;
+        /* Set margin */
+    }
+    
+    .create {
+        margin-top: -100px;
+        /* Set margin */
+        display: flex;
+        /* Set flex layout */
+        justify-content: center;
+    }
+    
+    .create div {
+        margin: 20px 0;
+        /* Set margin */
+        border-radius: 20px;
+        width: 200px;
+        height: 40px;
+        /* Box width and height */
+        text-align: center;
+        line-height: 40px;
+    }
+    
+    .create div span {
+        font-size: 18px;
+    }
+    
+    img {
+        width: 240px;
+    }
+    
+    .box2 {
+        visibility: hidden;
+        /* hide */
+        position: absolute;
+        align-items: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 900px;
+        /* Box width and height */
+        height: 600px;
+        box-shadow: #e4e1e1 3px 3px 3px 3px;
+        background-color: #fff;
+        /* background color */
+        border-radius: 20px;
+        display: flex;
+    }
+    
+    .box2 img {
+        margin: 50px;
+        /* Set margin */
+    }
+    
+    .box2-c {
+        /* Set margin */
+        display: flex;
+        /* Set flex layout */
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .box2-c h2 {
+        font-weight: 600;
+    }
+    
+    .box2-c-t {
+        padding: 30px 0;
+        /* Set inner margin */
+        font-size: 23px;
+        height: 400px;
+    }
+    
+    .back {
+        cursor: pointer;
+        width: 130px;
+        /* Box width and height */
+        height: 40px;
+        font-size: 25px;
+        border-radius: 5px;
+        background-color: #ccc;
+        /* background color */
+        line-height: 35px;
+        text-align: center;
+    }
+    
+    .add {
+        width: 25px;
+        /* Box width and height */
+        height: 25px;
+    }
+    /* media query Adapt to mobile terminal */
+    
+    @media (max-width: 420px) {
+        .container {
+            margin: 20px auto;
+            /* Set margin */
+            box-sizing: border-box;
+        }
+        .title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 500;
+        }
+        .box div {
+            margin: 0 15px;
+            /* Set margin */
+            font-size: 18px;
+            width: 400px;
+            height: 100%;
+            border-radius: 50px;
+            text-align: center;
+            padding: 14px;
+            /* Set inner margin */
+            background-color: #fff;
+            /* background color */
+        }
+        img {
+            width: 100px;
+            /* Box width and height */
+            height: 280px;
+        }
+        .content {
+            display: flex;
+            /* Set flex layout */
+            margin: 20px 0;
+            /* Set margin */
+        }
+        .content-box {
+            justify-content: center;
+            display: flex;
+            /* Set flex layout */
+            flex-wrap: wrap;
+            flex: 1;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            padding: 5px;
+            /* Set inner margin */
+            font-size: 14px;
+        }
+        .content-box div {
+            word-wrap: break-word;
+            border-radius: 30px;
+            width: 90%;
+            /* Box width and height */
+            height: 80px;
+            background-color: #fff;
+            /* background color */
+            text-align: center;
+            line-height: 80px;
+            margin: 10px 0;
+            /* Set margin */
+        }
+        .box2 {
+            border: 1px solid black;
+            box-sizing: border-box;
+            display: block;
+            /* Set flex layout */
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 550px;
+            /* Box width and height */
+            box-shadow: #e4e1e1 3px 3px 3px 3px;
+            background-color: #fff;
+            /* background color */
+            border-radius: 20px;
+        }
+        .box2 img {
+            width: 70%;
+            height: 150px;
+            /* Box width and height */
+            margin: 10px 50px;
+            /* Set margin */
+        }
+        .box2-c {
+            display: flex;
+            /* Set flex layout */
+            flex-direction: column;
+            align-items: center;
+            margin: 0 5px;
+            /* Set margin */
+            height: 300px;
+        }
+        .box2-c h2 {
+            margin-top: 20px;
+            /* Set margin */
+            font-weight: 400;
+            font-size: 25px;
+        }
+        .box2-c-t {
+            font-size: 16px;
+            padding: 5px 10px;
+            /* Set inner margin */
+        }
+        .back {
+            cursor: pointer;
+            width: 130px;
+            height: 40px;
+            font-size: 25px;
+            border-radius: 5px;
+            background-color: #ccc;
+            /* background color */
+            line-height: 40px;
+            text-align: center;
+        }
+    }
+</style>
+
+<style>
+    /* css style on the pc */
+    
+    * {
+        padding: 0;
+        /* Set inner margin */
+        margin: 0;
+        /* Set margin */
+    }
+    /* Set background color */
+    
+    body,
+    html {
+        background-color: #eee7e7;
+        /* background color */
+    }
+    
+    .container1 {
+        margin: 60px auto;
+        /* Set margin */
+        box-sizing: border-box;
+        padding: 100px;
+        display: flex;
+        /* Set flex layout */
+        width: 100%;
+        /* Box width and height */
+    }
+    
+    .ren1 {
+        width: 300px;
+        /* Box width and height */
+        height: 550px;
+    }
+    
+    .tianjia {
+        width: 25px;
+        /* Box width and height */
+        height: 25px;
+    }
+    
+    #chuangjian {
+        /* background color */
+        width: 180px;
+        /* Box width and height */
+        border-radius: 35px;
+        /* Set the box corners */
+        padding: 5px 10px;
+        margin-left: 70px;
+        height: 30px;
+        /* Set margin */
+    }
+    
+    #chuangjian2 {
+        margin-top: 30px;
+        /* Set margin */
+        /* background color */
+        width: 190px;
+        height: 10px;
+        /* Box width and height */
+        border-radius: 35px;
+        /* Set the box corners */
+        padding: 5px 10px;
+        margin-left: 70px;
+        /* Set margin */
+    }
+    
+    #chuangjian span {
+        font-size: 16px;
+        /* font size */
+    }
+    
+    p {
+        margin: 0;
+        /* Set margin */
+    }
+    
+    .jihua {
+        width: 100%;
+        /* Box width and height */
+    }
+    
+    .jihua1 {
+        display: flex;
+        /* Set flex layout */
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 200px;
+        /* Set margin */
+        width: 70%;
+        /* Box width and height */
+        height: 400px;
+        overflow: auto;
+        background-color: #fff;
+        /* background color */
+        border-radius: 30px;
+        /* Set the box corners */
+    }
+    
+     ::-webkit-scrollbar {
+        width: 5px;
+        /* Box width and height */
+        background-color: #ddd6d6;
+        /* background color */
+        border-radius: 5px;
+        /* Set the box corners */
+        overflow: hidden;
+    }
+    
+    .jihua1-item {
+        display: flex;
+        /* Set flex layout */
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+        height: 150px;
+    }
+    
+    .jihua1-item img {
+        width: 130px;
+        /* Box width and height */
+        height: 130px;
+    }
+    
+    .title1 {
+        font-size: 18px;
+        /* font size */
+        font-weight: 600;
+    }
+    
+    .number1 {
+        font-size: 18px;
+        /* font size */
+    }
+    
+    .xuanze {
+        height: 25px;
+        width: 25px;
+        /* Box width and height */
+    }
+    
+    .success {
+        width: 100%;
+        /* Box width and height */
+        height: 50px;
+        background-color: #ccc;
+        /* background color */
+        font-size: 20px;
+        /* font size */
+        line-height: 50px;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+    }
+    /* choose your fitness program */
+    
+    .xuanzePro {
+        visibility: hidden;
+        position: absolute;
+        left: 50%;
+        top: 350%;
+        transform: translate(-26%, -60%);
+        width: 800px;
+        /* Box width and height */
+        height: 500px;
+        overflow: auto;
+        background-color: #fff;
+        /* background color */
+        border-radius: 30px;
+        /* Set the box corners */
+        padding: 15px;
+        display: flex;
+        /* Set flex layout */
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+        /* font size */
+    }
+    
+    .tianjiaProgram {
+        margin: 20px auto;
+        /* Set margin */
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        width: 100%;
+        /* Box width and height */
+        height: 350px;
+        overflow: auto;
+    }
+    
+    .endOption {
+        cursor: pointer;
+        display: flex;
+        /* Set flex layout */
+        justify-content: space-between;
+        padding: 10px 30px;
+        font-size: 24px;
+        /* font size */
+        width: 100%;
+        /* Box width and height */
+        font-weight: 600;
+    }
+    
+    .tianjiaItem {
+        background-color: cornflowerblue;
+        /* background color */
+        color: #fff;
+        /* font color */
+        padding: 4px 20px;
+        cursor: pointer;
+        border-radius: 2px;
+        /* Set the box corners */
+    }
+    
+    .programItem {
+        display: flex;
+        /* Set flex layout */
+        flex-direction: column;
+        padding-left: 30px;
+    }
+    
+    .jihua1-pro-item {
+        display: flex;
+        /* Set flex layout */
+        padding-right: 30px;
+        align-items: center;
+    }
+    /* media query Adapt to mobile terminal */
+    
+    @media (max-width: 420px) {
+        p {
+            margin: 0;
+            /* Set margin */
+        }
+        .ren1 {
+            display: none;
+        }
+        .container1 {
+            display: flex;
+            /* Set flex layout */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .chuangjian {
+            margin: 20px 0;
+            /* Set margin */
+        }
+        #chuangjian {
+            margin: -60px auto;
+            /* Set margin */
+        }
+        #chuangjian2 {
+            margin-top: 80px;
+            /* Set margin */
+            margin-left: 0;
+            /* Set margin */
+        }
+        .jihua {
+            margin-top: 30px;
+            /* Set margin */
+        }
+        .jihua1 {
+            display: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 48px -89px;
+            width: 182%;
+            height: 400px;
+            overflow: auto;
+            background-color: #fff;
+            border-radius: 30px;
+        }
+        .xuanze {
+            height: 25px;
+            /* Box width and height */
+            width: 25px;
+        }
+        .jihua1-item {
+            padding: 10px 8px;
+        }
+        .jihua1-item img {
+            width: 100px;
+            /* Box width and height */
+            height: 100px;
+        }
+        .title1 {
+            font-size: 15px;
+            /* font size */
+            font-weight: 600;
+        }
+        .number1 {
+            font-size: 16px;
+            /* font size */
+        }
+        .xuanze {
+            height: 20px;
+            width: 20px;
+        }
+        /* Box width and height */
+        /* choose your fitness program */
+        .xuanzePro {
+            visibility: hidden;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -42%);
+            width: 90%;
+            /* Box width and height */
+            height: 450px;
+            overflow: auto;
+            background-color: #fff;
+            /* background color */
+            border-radius: 30px;
+            /* Set the box corners */
+            padding: 5px;
+            display: flex;
+            /* Set flex layout */
+            flex-direction: column;
+            align-items: center;
+            font-size: 16px;
+            /* font size */
+        }
+        .program {
+            font-size: 20px;
+            /* font size */
+        }
+        .tianjiaProgram {
+            margin: 20px auto;
+            /* Set margin */
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            width: 100%;
+            /* Box width and height */
+            height: 350px;
+            overflow: auto;
+        }
+        .endOption {
+            cursor: pointer;
+            display: flex;
+            /* Set flex layout */
+            justify-content: space-between;
+            padding: 10px 30px;
+            /* Set inner margin */
+            font-size: 24px;
+            /* font size */
+            width: 100%;
+            /* Box width and height */
+            font-weight: 600;
+        }
+        .xuanzeImg {
+            width: 80px !important;
+            /* Box width and height */
+            height: 80px !important;
+        }
+        .tianjiaItem {
+            background-color: cornflowerblue;
+            /* background color */
+            color: #fff;
+            /* font color */
+            padding: 4px 10px;
+            /* Set inner margin */
+            cursor: pointer;
+            border-radius: 2px;
+            /* Set the box corners */
+        }
+        .programItem {
+            display: flex;
+            /* Set flex layout */
+            flex-direction: column;
+            padding-left: 5px;
+            /* Set inner margin */
+        }
+        .jihua1-pro-item {
+            display: flex;
+            /* Set flex layout */
+            padding-right: 10px;
+            /* Set inner margin */
+            align-items: center;
+        }
+    }
+</style>
+
+<body>
+    <!-- main box -->
+    <div class="container">
+        <!-- title -->
+        <div class="title">
+            <span>Introduce yourself</span>
+            <p>Enter your personal information to customize the training program</p>
+            <p>-All data will be kept confidential-</p>
+        </div>
+        <div class="content">
+            <!-- Figure picture -->
+            <img src="./image/intro-pc.png" alt="">
+            <!-- self intro -->
+            <div class="choose">
+                <p>Hi,my name is <input type="text">,</p>
+                <p>i am <input type="text"> years old,</p>
+                <p>my height is <input type="text">kg,</p>
+                <p>and my weight is <input type="text">cm,</p>
+                <p>my fitness goal are <select class="select-field">
+            <option value="0">--option--</option>
+            <option value="1">Shoulder exercises</option>
+            <option value="2">Leg exercises</option>
+            <option value="3">aerobic exercise</option>
+          </select></p>
+                <!-- Click to jump to the next page -->
+                <p class="next" id="xiayibu">Next</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="title">
+            <!-- title -->
+            <span>Learn more or just start planning</span>
+        </div>
+        <div class="box">
+            <!-- intro -->
+            <div>
+                We can learn more about fitness before we start,or you can just start, if you are confident
+            </div>
+        </div>
+        <div class="content">
+            <!-- image -->
+            <img src="./image/learn more1-pc.png" alt="">
+            <!-- Content of exercise -->
+            <div class="content-box">
+                <div class="soprt1">Band Assisted Pull-Up</div>
+                <div class="soprt2">Close Grip Push-ups</div>
+                <div class="soprt3">Jumping Jack</div>
+                <div class="soprt4">Dumbbell Biceps Curl</div>
+            </div>
+            <!-- Pictures of exercise -->
+            <img src="./image/learn more2-pc.png" alt="">
+        </div>
+        <div class="create">
+            <div id="create" style="cursor: pointer;">
+                <img class="add" src="./image/Group 69.png" alt="">
+                <span>create your plan</span>
+            </div>
+        </div>
+        <div class="box2">
+            <img id="one" alt="">
+            <div class="box2-c">
+                <h2 id="two"></h2>
+                <div id="three" class="box2-c-t"></div>
+                <div class="back">
+                    back
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container1">
+        <!-- Figure on the left -->
+        <img class="ren1" src="./image/Group 45.png" alt="">
+        <!-- Two click button -->
+        <div class="chuangjian">
+            <div id="chuangjian" style="cursor: pointer;">
+                <img class="tianjia" src="./image/Group 82.png" alt="">
+                <span>create your plan</span>
+            </div>
+            <div id="chuangjian2" style="cursor: pointer;">
+                <img class="tianjia" src="./image/Group 69.png" alt="">
+                <span>create more</span>
+            </div>
+        </div>
+        <div class="jihua">
+            <div class="jihua1">
+                <!-- I need a plan for training -->
+                <div>
+                    <div class="jihua1-item" v-for="(item,index) in jihua" :key="index">
+                        <img :src="item.image" alt="">
+                        <div style="display: flex;flex-direction: column;padding-right: 50px;">
+                            <span class="title1">{{item.title}}</span>
+                            <span class="number1">3 sets 15reps</span>
+                        </div>
+                        <input class="xuanze" type="checkbox">
+                    </div>
+                </div>
+                <div class="success" id="wancheng">
+                    Finish
+                </div>
+            </div>
+        </div>
+        <div class="xuanzePro">
+            <!-- The title of the optional plan -->
+            <h2 class="program">choose your fitness program</h2>
+            <!-- optional plan -->
+            <div class="tianjiaProgram">
+                <div class="jihua1-item" v-for="(item,index) in list" :key="index">
+                    <div class="jihua1-pro-item">
+                        <img class="xuanzeImg" :src="item.image" alt="">
+                        <div class="programItem">
+                            <span class="title1">{{item.title}}</span>
+                            <span class="number1"><em>15reps</em> <em style="padding-left: 20px;">15reps</em></span>
+                        </div>
+                    </div>
+                    <!-- <input class="xuanze" type="checkbox"> -->
+                    <span class="tianjiaItem" @click="tianjiaInjihua(index)">add</span>
+                </div>
+            </div>
+            <!-- back and save -->
+            <div class="endOption">
+                <span id="fanhui">BACK</span>
+                <span id="save">SAVE</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container5">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <!-- Analysis of the results -->
+                <div class="box3">
+                    <h3>analyse:</h3>
+                    <p>Shoulder exercises can strengthen the muscles around the shoulder, improve shoulder stability and movement ability, and prevent and relieve shoulder pain and other problems. Common shoulder exercises include push-ups, dumbbell presses,
+                        side lifts, and shoulder rotations.</p>
+                    <p>Leg exercises can enhance muscle strength and stability of the lower extremities, improve core stability, prevent sports injuries and improve athletic performance. Common leg exercises include squats, squats, bent leg bends, and heel
+                        raises
+                    </p>
+                    <h3>Suggestions:</h3>
+                    <p>1. Focus on proper posture and technique. Whether it's a shoulder or leg workout, focus on proper form and technique. This reduces the risk of injury and builds muscle more effectively.</p>
+                    <p>2. Gradually increase difficulty and weight. To keep the workout challenging, gradually increase the difficulty and weight. But be careful to increase appropriately, not too fast or too much at once, otherwise it is easy to cause muscle
+                        soreness or injury.</p>
+                    <p>3. Mix it up. The shoulders and legs are important muscle parts of the body. Instead of doing a single workout, consider a comprehensive workout such as yoga and Pilates.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery file, be sure to introduce it before bootstrap.min.js -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap.bundle.min.js for popups, hints, dropdowns, includes popper.min.js -->
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script>
+
+        new Vue({
+            el: '.container1', 
+            data: { // Define data Provide convenience
+                messag: '123',
+                list: [{
+                    image: './image/image1.png',
+                    title: 'Band Assisted Pull-Up'
+                }, {
+                    image: './image/image2.png',
+                    title: 'Close Grip Push-ups'
+                }, {
+                    image: './image/image3.png',
+                    title: 'Jumping Jack'
+                }, {
+                    image: './image/image4.png',
+                    title: 'Dumbbell Biceps Curl'
+                }, {
+                    image: './image/image5.png',
+                    title: 'Chest Dips'
+                }, {
+                    image: './image/image6.png',
+                    title: 'Sit-ups'
+                }],
+                jihua: [{
+                    image: './image/image1.png',
+                    title: 'Band Assisted Pull-Up'
+                }, {
+                    image: './image/image2.png',
+                    title: 'Close Grip Push-ups'
+                }]
+            },
+            // Method area
+            methods: {
+                // Click and add the plan to my training
+                tianjiaInjihua(index) {
+                    if (this.jihua[index]) {
+                        if (this.list[index].title == this.jihua[index].title) {
+                            return alert('The next jihua is already in the jihua')
+                        } else {
+                            this.jihua.push(this.list[index])
+                            alert('add Success')
+                        }
+                    } else {
+                        this.jihua.push(this.list[index])
+                        alert('add Success')
+                    }
+
+                }
+            }
+        });
+    </script>
+    <script>
+        $('#xiayibu').click(() => {
+            window.scrollTo(0, 1000);
+        })
+
+        document.querySelector('#create').addEventListener('click', function() {
+            window.scrollTo(0, 2000);
+        })
+        $('#xiayibu').click(() => {
+            window.scrollTo(0, 2000);
+        })
+        $('#chuangjian2').click(() => {
+                $('.xuanzePro').css('visibility', 'visible')
+                $('.jihua').fadeOut()
+
+            })
+            // Click to toggle the show-hide of the box
+        $('#chuangjian').click(() => {
+            $('.jihua').fadeToggle()
+
+        })
+        $('.success').click(() => {
+                window.scrollTo(0, 4000);
+            })
+            // Click to toggle the show-hide of the box
+
+        $('#fanhui').click(() => {
+                $('.xuanzePro').css('visibility', 'hidden')
+                $('.jihua').fadeIn()
+
+            })
+            // Click to toggle the show-hide of the box
+
+        $('#save').click(() => {
+            $('.xuanzePro').css('visibility', 'hidden')
+            $('.jihua').fadeIn()
+
+        })
+    </script>
+    <script>
+        (function() {
+            // Click on the first image to display the image and its contents
+            $(".soprt1").click(function() {
+                $('.box2').css('visibility', 'visible')
+                $('#one').attr('src', './image/image1.png');
+                $('#two').html('Band Assisted Pull-Up')
+                $('#three').html('Band-assisted pull-ups offer progressive assistance, improve technique, allow for increased repetitions, reduce joint stress, engage key muscles, and are versatile and portable. They are beneficial for beginners, promote strength and muscle growth, and serve as a stepping stone towards unassisted pull-ups.')
+            });
+            // Click on the second image to display the image and its contents
+            $(".soprt2").click(function() {
+                $('.box2').css('visibility', 'visible')
+                $('#one').attr('src', './image/image2.png');
+                $('#two').html('Close Grip Push-ups')
+                $('#three').html('Close grip push-ups offer targeted benefits for the upper body. They engage the triceps, chest, and shoulders, aiding in strength and muscle development. The narrow hand placement intensifies tricep activation. These push-ups also engage the core, enhance stability, and are adaptable to different fitness levels.')
+            });
+            // Click on the third image to display the image and its contents
+            $(".soprt3").click(function() {
+                $('.box2').css('visibility', 'visible')
+                $('#one').attr('src', './image/image3.png');
+                $('#two').html('Jumping Jack')
+                $('#three').html('Open and closed jumping is a dynamic and effective aerobic exercise that increases heart rate and improves cardiovascular health. Open and closed jumps involve multiple muscle groups, including the legs, core and arms, improving overall strength and endurance. They are also versatile, require minimal space and can be easily incorporated into a variety of exercise routines.')
+            });
+            // Click on the fourth image to display the image and its contents
+            $(".soprt4").click(function() {
+                $('.box2').css('visibility', 'visible')
+                $('#one').attr('src', './image/image4.png');
+                $('#two').html('Dumbbell Biceps Curl')
+                $('#three').html('Dumbbell biceps curls effectively target and strengthen the biceps, leading to improved arm strength and muscle definition. They offer versatility in grip and weight selection, engage stabilizer muscles, promote balance, and can be conveniently performed in various settings, making them a beneficial exercise for overall upper body development.')
+            });
+            // Click back to hide
+            $(".back").click(function() {
+                $('.box2').css('visibility', 'hidden')
+            });
+
+        })
+    </script>
+</body>
+
+</html>
