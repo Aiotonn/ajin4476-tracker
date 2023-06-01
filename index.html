@@ -310,8 +310,9 @@
         font-size: 18px;
     }
     
-    img {
+    .renwu {
         width: 240px;
+        margin: 0;
     }
     
     .box2 {
@@ -526,6 +527,7 @@
         width: 300px;
         /* Box width and height */
         height: 550px;
+        margin: 0;
     }
     
     .tianjia {
@@ -920,7 +922,7 @@
         </div>
         <div class="content">
             <!-- image -->
-            <img src="./image/learn more1-pc.png" alt="">
+            <img class="renwu" src="./image/learn more1-pc.png" alt="">
             <!-- Content of exercise -->
             <div class="content-box">
                 <div class="soprt1">Band Assisted Pull-Up</div>
@@ -929,7 +931,7 @@
                 <div class="soprt4">Dumbbell Biceps Curl</div>
             </div>
             <!-- Pictures of exercise -->
-            <img src="./image/learn more2-pc.png" alt="">
+            <img class="renwu" src="./image/learn more2-pc.png" alt="">
         </div>
         <div class="create">
             <div id="create" style="cursor: pointer;">
@@ -965,6 +967,7 @@
         </div>
         <div class="jihua">
             <div class="jihua1">
+
                 <!-- I need a plan for training -->
                 <div>
                     <div class="jihua1-item" v-for="(item,index) in jihua" :key="index">
