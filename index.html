@@ -910,7 +910,7 @@
     <div class="container">
         <div class="title">
             <!-- title -->
-            <span>Learn more or just start planning</span>
+            <span id="biaoti">Learn more or just start planning</span>
         </div>
         <div class="box">
             <!-- intro -->
@@ -1088,28 +1088,28 @@
     </script>
     <script>
         $('#xiayibu').click(() => {
-            window.scrollTo(0, 1000);
+            let height = $('#biaoti').offset().top
+            window.scrollTo(0, height);
         })
 
         document.querySelector('#create').addEventListener('click', function() {
-            window.scrollTo(0, 2000);
-        })
-        $('#xiayibu').click(() => {
-            window.scrollTo(0, 2000);
+            let height = $('.jihua1-item').offset().top
+            window.scrollTo(0, height - 100);
         })
         $('#chuangjian2').click(() => {
-                $('.xuanzePro').css('visibility', 'visible')
-                $('.jihua').fadeOut()
-
+            $('.xuanzePro').css('visibility', 'visible')
+            $('.jihua').fadeOut()
+        })
+        $('.success').click(() => {
+                let height = $('.container5').offset().top
+                window.scrollTo(0, height);
             })
             // Click to toggle the show-hide of the box
         $('#chuangjian').click(() => {
             $('.jihua').fadeToggle()
 
         })
-        $('.success').click(() => {
-                window.scrollTo(0, 4000);
-            })
+
             // Click to toggle the show-hide of the box
 
         $('#fanhui').click(() => {
