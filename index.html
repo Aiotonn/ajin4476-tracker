@@ -655,7 +655,7 @@
         visibility: hidden;
         position: absolute;
         left: 50%;
-        top: 350%;
+        top: 280%;
         transform: translate(-26%, -60%);
         width: 800px;
         /* Box width and height */
@@ -1075,7 +1075,7 @@
                 tianjiaInjihua(index) {
                     if (this.jihua[index]) {
                         if (this.list[index].title == this.jihua[index].title) {
-                            return alert('The next jihua is already in the jihua')
+                            return alert('The next plan is already in the list')
                         } else {
                             this.jihua.push(this.list[index])
                             alert('add Success')
@@ -1163,7 +1163,7 @@
                 $('.box2').css('visibility', 'hidden')
             });
 
-        })
+        })()
     </script>
 </body>
 
